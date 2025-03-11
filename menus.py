@@ -53,7 +53,7 @@ def difficulty_menu(screen, font, menu_background_image):
         screen.blit(hard_text, (350, 230))
 
     
-        pygame.display.update()#update screen
+        pygame.display.update()#updates  the screen
 
 
         for event in pygame.event.get():
@@ -106,7 +106,7 @@ def high_scores_screen(screen, font):
             pygame.draw.rect(screen,GREEN, delete_button)
             delete_text= font.render("Delete", True, BLACK)
             screen.blit(delete_text, (510, y_offset + 5))
-            delete_buttons.append((delete_button, player))  # Store button and player name
+            delete_buttons.append((delete_button, player))  # Stores  button and player name
 
             y_offset += 40
 
@@ -152,10 +152,10 @@ def game_over_screen(screen, font, score, player_name, menu_background_image):
         menu_text= font.render("Main Menu",True, BLACK)
         screen.blit(menu_text, (330,230))
 
-        # Update the display
+        # Updates  the display,whats seen on screen
         pygame.display.update()
 
-        # Handle events
+        # Handles  events
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 pygame.quit()
