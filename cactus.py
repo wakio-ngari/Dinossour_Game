@@ -13,7 +13,7 @@ class Cactus:
         self.rect= self.image.get_rect()
         self.difficulty= difficulty
         
-        # Adjust spacing based on difficulty
+        # Adjust spacing based on difficulty and level (easy or hard)
         if difficulty=="easy":
             self.rect.x= SCREEN_WIDTH + random.randint(400,600)
         else:
@@ -29,13 +29,13 @@ class Cactus:
             self.speed= 10
 
     def update(self):
-        # Animation
+        # controls cacti Animation
         self.current_frame += self.animation_speed
         if self.current_frame >= len(self.frames):
             self.current_frame = 0
         self.image =self.frames[int(self.current_frame )]
 
-        # Movement
+        # controls cacti Movements
         self.rect.x -= self.speed
         if self.rect.x < -self.rect.width:
             if self.difficulty == "easy":
